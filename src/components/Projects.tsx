@@ -41,6 +41,8 @@ const Projects = () => {
             <a
               key={project.title}
               href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group block border-t border-border py-10 md:py-14 transition-colors hover:bg-card/30"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
