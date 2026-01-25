@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 40%;
+
+    --radius: 1rem;
+
+    /* Custom design tokens */
+    --glow: 0 0% 30%;
+    --surface: 0 0% 9%;
+    --text-primary: 0 0% 96%;
+    --text-secondary: 0 0% 65%;
+    --text-muted: 0 0% 45%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-card rounded-2xl border border-border p-6 md:p-8 transition-all duration-300;
+  }
+
+  .bento-card:hover {
+    @apply border-[hsl(var(--glow))];
+    box-shadow: 0 0 40px -12px hsl(var(--glow) / 0.3);
+  }
+
+  .section-title {
+    @apply text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground mb-8 md:mb-12;
+  }
+
+  .heading-xl {
+    @apply text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .pill-button {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10;
+  }
+
+  .nav-link {
+    @apply text-sm text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  .service-number {
+    @apply text-6xl md:text-7xl font-bold text-muted/30;
+  }
+
+  .tech-tag {
+    @apply text-xs text-muted-foreground;
+  }
+
+  .input-field {
+    @apply w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors duration-300;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl bg-card border border-border transition-all duration-500;
+  }
+
+  .project-card:hover {
+    @apply border-[hsl(var(--glow))];
+    box-shadow: 0 0 60px -20px hsl(var(--glow) / 0.4);
+  }
+
+  .footer-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-mask {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+}
+
+/* Custom animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes water-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes water-ripple-delayed {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(25);
+    opacity: 0;
+  }
+}
+
+@keyframes water-ripple-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(30);
+    opacity: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.6s ease-out forwards;
+}
+
+.animate-water-ripple {
+  animation: water-ripple 1s ease-out forwards;
+}
+
+.animate-water-ripple-delayed {
+  animation: water-ripple-delayed 1.2s ease-out 0.1s forwards;
+}
+
+.animate-water-ripple-slow {
+  animation: water-ripple-slow 1.4s ease-out 0.2s forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
