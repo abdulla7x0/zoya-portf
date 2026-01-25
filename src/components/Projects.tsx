@@ -6,21 +6,21 @@ const projects = [
     subtitle: "Full-Stack Recruitment Platform",
     category: "DEVELOPMENT",
     year: "2025",
-    link: "#",
+    link: "https://z-p2.vercel.app/",
   },
   {
     title: "Portfolio Builder App",
     subtitle: "A ready to made Portfolio Builder",
     category: " Development",
     year: "2025",
-    link: "#",
+    link: "https://z-p1.vercel.app/",
   },
   {
     title: "Code Editor Lightweight",
     subtitle: "Developer-First Code Visualization Tool",
     category: "DEVELOPMENT",
     year: "2025",
-    link: "#",
+    link: "https://z-p3.vercel.app/",
   },
 ];
 
